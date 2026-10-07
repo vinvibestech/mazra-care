@@ -46,7 +46,7 @@ export default function CommunityVision() {
             "
           >
             <Image
-              src="/sustainability/CommunitySocialSustainability.png"
+              src="/sustainability/CommunitySocial.png"
               alt="Community and social sustainability"
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"

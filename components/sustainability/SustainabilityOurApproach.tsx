@@ -208,7 +208,7 @@ export default function SustainabilityOurApproach() {
           "
         >
           <Image
-            src="/solutions/OurSolutions.png"
+            src="/sustainability/OurApproach.png"
             alt="Sustainable farming and modern agricultural systems"
             fill
             priority

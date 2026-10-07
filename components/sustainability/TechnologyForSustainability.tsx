@@ -40,7 +40,7 @@ export default function TechnologyForSustainability() {
           mx-auto w-full max-w-[1600px]
           overflow-hidden
           rounded-[42px]
-          bg-[#F0F2EA]
+          bg-[#EAF4E6]
           px-7 py-12
           sm:rounded-[48px]
           sm:px-10 sm:py-14
@@ -104,12 +104,13 @@ export default function TechnologyForSustainability() {
               className="
                 mt-8
                 max-w-[650px]
-              text-[16px]
-                leading-[1.65]
-                text-[#58685F]
-                sm:text-[17px]
-                md:text-[18px]
-                lg:text-[18px]
+               text-[14px]
+                leading-[1.55]
+                text-[#4B5563]
+                sm:text-[15px]
+                md:text-[16px]
+                lg:text-[15px]
+                xl:text-[16px]
               "
             >
               Technology helps us understand what crops need and use resources
@@ -385,7 +386,7 @@ export default function TechnologyForSustainability() {
             "
           >
             <Image
-              src="/technology/TechnologyForSustainability.png"
+              src="/sustainability/TechnologySustainability.png"
               alt="Smart technology for sustainable agriculture"
               fill
               priority

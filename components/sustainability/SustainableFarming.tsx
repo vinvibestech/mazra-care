@@ -70,12 +70,13 @@ export default function SustainableFarming() {
             className="
               mt-8
               max-w-[650px]
-                text-[16px]
-                leading-[1.65]
-                text-[#58685F]
-                sm:text-[17px]
-                md:text-[18px]
-                lg:text-[18px]
+                text-[14px]
+                leading-[1.55]
+                text-[#4B5563]
+                sm:text-[15px]
+                md:text-[16px]
+                lg:text-[15px]
+                xl:text-[16px]
             "
           >
             Our{" "}
