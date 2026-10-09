@@ -8,7 +8,7 @@ export default function ContactHero() {
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (
-    <section className="w-full bg-white py-14 sm:py-16 md:py-20 lg:py-34">
+    <section className="w-full bg-white py-14 sm:py-16 md:py-20 lg:pt-36 lg:pb-24">
       <div
         className="
           mx-auto grid w-full max-w-[1600px] grid-cols-1
@@ -17,11 +17,7 @@ export default function ContactHero() {
           lg:gap-14 lg:px-12 xl:gap-20 xl:px-14
         "
       >
-        {/* =========================================================
-            LEFT CONTENT
-            MOBILE / TABLET: TOP
-            DESKTOP: LEFT
-        ========================================================= */}
+
         <div className="order-1 flex flex-col items-start">
           {/* EYEBROW */}
           <span
@@ -218,11 +214,6 @@ export default function ContactHero() {
           </div>
         </div>
 
-        {/* =========================================================
-            RIGHT IMAGE
-            MOBILE / TABLET: BOTTOM
-            DESKTOP: RIGHT
-        ========================================================= */}
         <div
           className="
             relative
@@ -238,7 +229,7 @@ export default function ContactHero() {
           "
         >
           <Image
-            src="/sustainability/Sustainability.png"
+            src="/contact/contactHero.png"
             alt="Sustainable farming and responsible agriculture"
             fill
             priority

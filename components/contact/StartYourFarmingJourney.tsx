@@ -593,7 +593,7 @@ export default function StartYourFarmingJourney() {
           "
         >
           <Image
-            src="/contact/HydroponicFarm.png"
+            src="/contact/StartYourFarming.png"
             alt="Hydroponic farming system"
             fill
             priority

@@ -400,7 +400,7 @@ export default function WhatCanYouEnquireAbout() {
         font-semibold
         leading-[1.25]
         tracking-[-0.02em]
-        text-[#1F3024]
+        text-[#111827]
 
         transition-colors
         duration-500

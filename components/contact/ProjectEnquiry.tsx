@@ -36,7 +36,7 @@ export default function ProjectEnquiry() {
           "
         >
           <Image
-            src="/solutions/OurSolutions.png"
+            src="/contact/ProjectEnquiry.png"
             alt="Modern greenhouse and sustainable farming fields"
             fill
             priority

@@ -36,7 +36,7 @@ export default function LetsTalk() {
           "
         >
           <Image
-            src="/solutions/OurSolutions.png"
+            src="/contact/Let'sTalk.png"
             alt="Modern greenhouse and sustainable farming fields"
             fill
             priority

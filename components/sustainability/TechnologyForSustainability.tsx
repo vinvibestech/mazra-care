@@ -37,7 +37,7 @@ export default function TechnologyForSustainability() {
     <section className="w-full bg-white px-4 py-8 sm:px-6 sm:py-10 md:px-8 lg:px-10">
       <div
         className="
-          mx-auto w-full max-w-[1600px]
+          mx-auto w-full max-w-[1400px]
           overflow-hidden
           rounded-[42px]
           bg-[#EAF4E6]
@@ -46,7 +46,7 @@ export default function TechnologyForSustainability() {
           sm:px-10 sm:py-14
           md:px-14 md:py-16
           lg:rounded-[56px]
-          lg:px-16 lg:py-[76px]
+          lg:px-16 lg:py-16
           xl:px-[86px]
         "
       >
