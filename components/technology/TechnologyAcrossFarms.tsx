@@ -7,7 +7,7 @@ import { ArrowRight, ChevronUp } from "lucide-react";
 const farmTypes = [
   {
     title: "Residential Farms",
-    image: "/tech/ResidentialFarms.png",
+    image: "/tech/ResidentialFarm.png",
     description:
       "Smart systems for home-based and small-space agricultural environments.",
   },
@@ -25,13 +25,13 @@ const farmTypes = [
   },
   {
     title: "Greenhouses",
-    image: "/tech/Greenhouses.png",
+    image: "/tech/Greenhouse.png",
     description:
       "Controlled environments supported by monitoring, automation and smart agricultural technology.",
   },
   {
     title: "Commercial Farms",
-    image: "/tech/CommercialFarms.png",
+    image: "/tech/CommercialFarm.png",
     description:
       "Scalable technology solutions designed for business-oriented agricultural production.",
   },

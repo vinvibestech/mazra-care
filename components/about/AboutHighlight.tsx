@@ -125,7 +125,7 @@ export default function AboutHighlight() {
           "
         >
           <Image
-            src="/about/AboutUs.png"
+            src="/about/About.png"
             alt="Modern greenhouse and sustainable farming fields"
             fill
             priority

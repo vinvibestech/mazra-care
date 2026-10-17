@@ -26,7 +26,7 @@ export default function OurVision() {
           "
                 >
                     <Image
-                        src="/about/OurVision.png"
+                        src="/about/OurVisions.png"
                         alt="Modern greenhouse and sustainable farming fields"
                         fill
                         priority

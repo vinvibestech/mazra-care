@@ -116,7 +116,7 @@ export default function TechnologyHighlight() {
           "
         >
           <Image
-            src="/tech/Technologyhero.png"
+            src="/tech/Technologyheros.png"
             alt="Modern greenhouse and sustainable farming fields"
             fill
             priority

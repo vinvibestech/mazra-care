@@ -221,7 +221,7 @@ export default function SustainabilityHero() {
           "
         >
           <Image
-            src="/sustainability/Sustainability.png"
+            src="/sustainability/Sustainabilitys.png"
             alt="Sustainable farming and responsible agriculture"
             fill
             priority

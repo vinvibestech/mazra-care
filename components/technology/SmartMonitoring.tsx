@@ -44,7 +44,7 @@ export default function SmartMonitoring() {
             "
           >
             <Image
-              src="/tech/SmartMonitoring.png"
+              src="/tech/SmartMonitorings.png"
               alt="Smart agricultural monitoring system"
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"
@@ -370,7 +370,7 @@ export default function SmartMonitoring() {
             "
           >
             <Image
-              src="/tech/DataAnalytics.png"
+              src="/tech/DataAnalytic.png"
               alt="Agricultural data and analytics"
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"

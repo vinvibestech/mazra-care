@@ -58,7 +58,7 @@ const sections = [
     id: "commercial",
     label: "Commercial Farming",
     title: "Built to Grow With Your Business.",
-    image: "/solutions/CommercialFarming.png",
+    image: "/solutions/CommercialFarmings.png",
     imageAlt: "Commercial greenhouse farming facility",
     visibleContent: (
       <>

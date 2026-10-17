@@ -43,7 +43,7 @@ export default function IoTConnectedFarming() {
             "
           >
             <Image
-              src="/tech/IoTConnected.png"
+              src="/tech/IoTConnecteds.png"
               alt="Connected farming technology"
               fill
               priority

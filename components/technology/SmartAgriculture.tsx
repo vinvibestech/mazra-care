@@ -26,7 +26,7 @@ export default function SmartAgriculture() {
           "
                 >
                     <Image
-                        src="/tech/SmartAgriculture.png"
+                        src="/tech/SmartAgricultures.png"
                         alt="Modern greenhouse and sustainable farming fields"
                         fill
                         priority
