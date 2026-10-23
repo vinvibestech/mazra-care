@@ -4,31 +4,32 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { motion } from "framer-motion";
 
 const processSteps = [
   {
     title: "Plan",
-    description: "Smart Planning",
+    description: "Assess needs and space",
     image: "/home/Plan.png",
   },
   {
     title: "Design",
-    description: "Custom Design",
+    description: "Develop tailored systems",
     image: "/home/Design.png",
   },
   {
     title: "Build",
-    description: "Professional Installation",
+    description: "Install and integrate",
     image: "/home/Build.png",
   },
   {
     title: "Grow",
-    description: "Farm Management",
+    description: "Cultivate and monitor",
     image: "/home/Grow.png",
   },
   {
     title: "Support",
-    description: "Ongoing Support",
+    description: "Maintain and improve",
     image: "/home/Support.png",
   },
 ];
@@ -65,7 +66,13 @@ export default function FromIdeaToHarvest() {
             HEADER
         ====================================================== */}
 
-        <div className="flex flex-col items-center text-center">
+        <motion.div
+          className="flex flex-col items-center text-center"
+          initial={{ opacity: 0, y: 28, filter: "blur(8px)" }}
+          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          viewport={{ once: false, amount: 0.35 }}
+          transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1] }}
+        >
           {/* Heading */}
           <h2
             className="
@@ -93,7 +100,7 @@ export default function FromIdeaToHarvest() {
               mt-4
               flex
               w-full
-              max-w-[680px]
+              max-w-[780px]
               flex-col
               items-center
               justify-center
@@ -185,7 +192,7 @@ export default function FromIdeaToHarvest() {
             {/* Description */}
             <p
               className="
-                max-w-[620px]
+                max-w-[720px]
                 text-[12px]
                 leading-[1.55]
                 text-[#6B7280]
@@ -197,11 +204,10 @@ export default function FromIdeaToHarvest() {
                 lg:text-[15px]
               "
             >
-              From the first idea to ongoing farm support, we manage the
-              entire journey.
+       A connected approach to planning, developing and managing sustainable farming environments.
             </p>
           </div>
-        </div>
+        </motion.div>
 
         {/* =====================================================
             PROCESS
@@ -240,7 +246,7 @@ export default function FromIdeaToHarvest() {
     "
   >
     {processSteps.map((step) => (
-      <div
+      <motion.div
         key={step.title}
         className="
           flex
@@ -249,6 +255,14 @@ export default function FromIdeaToHarvest() {
           items-center
           text-center
         "
+        initial={{ opacity: 0, y: 32, scale: 0.97, filter: "blur(3px)" }}
+        whileInView={{ opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }}
+        viewport={{ once: false, amount: 0.2 }}
+        transition={{
+          duration: 1.35,
+          delay: processSteps.findIndex((item) => item.title === step.title) * 0.14,
+          ease: [0.22, 1, 0.36, 1],
+        }}
       >
         {/* IMAGE */}
         <div
@@ -313,7 +327,7 @@ export default function FromIdeaToHarvest() {
         >
           {step.description}
         </p>
-      </div>
+      </motion.div>
     ))}
   </div>
 </div>
@@ -342,7 +356,7 @@ export default function FromIdeaToHarvest() {
                 className="contents"
               >
                 {/* STEP */}
-                <div
+                <motion.div
                   className="
                     flex
                     min-w-0
@@ -350,6 +364,14 @@ export default function FromIdeaToHarvest() {
                     items-center
                     text-center
                   "
+                  initial={{ opacity: 0, y: 28, scale: 0.97, filter: "blur(3px)" }}
+                  whileInView={{ opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }}
+                  viewport={{ once: false, amount: 0.2 }}
+                  transition={{
+                    duration: 1.45,
+                    delay: index * 0.16,
+                    ease: [0.22, 1, 0.36, 1],
+                  }}
                 >
                   {/* Image */}
                   <div
@@ -411,7 +433,7 @@ export default function FromIdeaToHarvest() {
                   >
                     {step.description}
                   </p>
-                </div>
+                </motion.div>
 
                 {/* ARROW */}
                 {index < processSteps.length - 1 && (
@@ -443,7 +465,11 @@ export default function FromIdeaToHarvest() {
             CTA
         ====================================================== */}
 
-        <div
+        <motion.div
+          initial={{ opacity: 0, y: 20, scale: 0.99 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          viewport={{ once: false, amount: 0.25 }}
+          transition={{ duration: 1.3, ease: [0.22, 1, 0.36, 1] }}
           className="
             mt-12
             flex
@@ -520,7 +546,7 @@ export default function FromIdeaToHarvest() {
                                 />
                             </span>
                         </Link>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

@@ -1,6 +1,8 @@
+"use client";
 
 import Image from "next/image";
 import Link from "next/link";
+import { motion, useReducedMotion } from "framer-motion";
 
 const commitments = [
   "COMMITMENT TO SUSTAINABILITY",
@@ -8,12 +10,55 @@ const commitments = [
   "COMMITMENT TO SUSTAINABILITY",
 ];
 
+const smoothEase = [0.16, 1, 0.3, 1] as const;
+
 export default function OurProjects() {
+  const shouldReduceMotion = useReducedMotion();
+
+  const reveal = {
+    hidden: {
+      opacity: 0,
+      y: shouldReduceMotion ? 0 : 16,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: shouldReduceMotion ? 0 : 2.2,
+        ease: smoothEase,
+      },
+    },
+  };
+
+  const imageReveal = {
+    hidden: {
+      opacity: 0,
+      y: shouldReduceMotion ? 0 : 18,
+      scale: shouldReduceMotion ? 1 : 0.995,
+    },
+    visible: (index: number) => ({
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: {
+        duration: shouldReduceMotion ? 0 : 2.4,
+        delay: shouldReduceMotion ? 0 : index * 0.3,
+        ease: smoothEase,
+      },
+    }),
+  };
+
   return (
     <section className="w-full bg-white py-12 sm:py-16 md:py-20 lg:py-24">
       <div className="mx-auto w-full max-w-[1700px] px-4 sm:px-6 md:px-8 lg:px-12 xl:px-14">
         {/* HEADER */}
-        <div className="flex items-center justify-between gap-3 sm:gap-4">
+        <motion.div
+          className="flex items-center justify-between gap-3 sm:gap-4"
+          variants={reveal}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false, amount: 0.25, margin: "0px 0px -40px 0px" }}
+        >
           <h2
             className="
               text-[clamp(30px,5vw,52px)]
@@ -23,7 +68,7 @@ export default function OurProjects() {
               text-[#111827]
             "
           >
-            Our Projects.
+            Our Projects & Possibilities.
           </h2>
 
           <div className="flex shrink-0 items-center gap-2 sm:gap-4">
@@ -45,10 +90,10 @@ export default function OurProjects() {
               </SocialLink>
             </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* PROJECT IMAGES */}
-        <div
+        <motion.div
           className="
             mt-7 grid grid-cols-1 gap-4
             sm:mt-8 sm:grid-cols-[0.78fr_1.55fr_0.78fr]
@@ -57,56 +102,76 @@ export default function OurProjects() {
             lg:mt-9 lg:grid-cols-[0.78fr_1.6fr_0.78fr]
             lg:gap-[18px]
           "
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false, amount: 0.08, margin: "0px 0px -20px 0px" }}
         >
           {/* LEFT IMAGE */}
           <ProjectImage
-            src="/home/GoldenHour.png"
+            src="/home/project1.png"
             alt="Glass greenhouse surrounded by a garden"
             className="
               aspect-[1.5/1] w-full
               sm:aspect-[1.12/1]
               sm:translate-y-1
             "
+            index={0}
+            variants={imageReveal}
+            shouldReduceMotion={shouldReduceMotion}
           />
 
           {/* MAIN IMAGE */}
           <ProjectImage
-            src="/home/GreenhouseTomato.png"
+          src="/home/GoldenHours.png"
             alt="Farmer working inside a modern greenhouse"
             className="
               aspect-[1.5/1] w-full
               sm:aspect-[1.55/1]
             "
+            index={1}
+            variants={imageReveal}
+            shouldReduceMotion={shouldReduceMotion}
           />
 
           {/* RIGHT IMAGES */}
           <div className="grid grid-cols-2 gap-3 sm:grid-cols-1 sm:gap-3 md:gap-[14px]">
             <ProjectImage
-              src="/home/SunlitHands.png"
+              src="/home/project2.png"
               alt="Hands planting a young seedling"
               className="aspect-[1.3/1] w-full sm:aspect-[2.05/1]"
+              index={2}
+              variants={imageReveal}
+              shouldReduceMotion={shouldReduceMotion}
             />
 
             <ProjectImage
-              src="/home/HighTech.png"
+              src="/home/project3.png"
               alt="Indoor vertical farming system"
               className="aspect-[1.3/1] w-full sm:aspect-[2.05/1]"
+              index={3}
+              variants={imageReveal}
+              shouldReduceMotion={shouldReduceMotion}
             />
           </div>
-        </div>
+        </motion.div>
 
         {/* BOTTOM COMMITMENTS */}
-        <div
+        <motion.div
           className="
             hidden mt-8 grid grid-cols-1
             border-t border-[#E9ECEF] sm:grid pt-4
             sm:mt-10 sm:grid-cols-3 sm:gap-4 sm:pt-5
-            md:mt-12 
+            md:mt-12
           "
+          variants={reveal}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false, amount: 0.15, margin: "0px 0px -30px 0px" }}
         >
           {commitments.map((text, index) => (
-            <p
+            <motion.p
               key={index}
+              variants={reveal}
               className={`
                 text-center text-[9px]
                 font-semibold tracking-[0.015em]
@@ -117,9 +182,9 @@ export default function OurProjects() {
               `}
             >
               {text}
-            </p>
+            </motion.p>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
@@ -130,13 +195,33 @@ function ProjectImage({
   src,
   alt,
   className,
+  index,
+  variants,
+  shouldReduceMotion,
 }: {
   src: string;
   alt: string;
   className?: string;
+  index: number;
+  variants: {
+    hidden: { opacity: number; y: number; scale?: number };
+    visible: (index: number) => {
+      opacity: number;
+      y: number;
+      scale: number;
+      transition: {
+        duration: number;
+        delay: number;
+        ease: typeof smoothEase;
+      };
+    };
+  };
+  shouldReduceMotion: boolean | null;
 }) {
   return (
-    <div
+    <motion.div
+      custom={index}
+      variants={variants}
       className={`
         group relative w-full overflow-hidden
         rounded-[16px] bg-[#EAF2EB]
@@ -152,7 +237,7 @@ function ProjectImage({
         fill
         className="
           object-cover
-          transition-transform duration-700 ease-out
+          transition-transform duration-[1400ms] ease-[cubic-bezier(0.16,1,0.3,1)]
           group-hover:scale-[1.035]
         "
         sizes="
@@ -161,7 +246,7 @@ function ProjectImage({
           40vw
         "
       />
-    </div>
+    </motion.div>
   );
 }
 
@@ -175,20 +260,27 @@ function SocialLink({
   label: string;
   children: React.ReactNode;
 }) {
+  const shouldReduceMotion = useReducedMotion();
+
   return (
-    <Link
-      href={href}
-      aria-label={label}
-      className="
-        flex h-6 w-6 shrink-0 items-center justify-center
-        rounded-full bg-black
-        text-[10px] font-semibold text-white
-        transition-transform duration-300
-        hover:scale-110
-        sm:h-[21px] sm:w-[21px]
-      "
+    <motion.div
+      whileHover={shouldReduceMotion ? undefined : { y: -2, scale: 1.06 }}
+      transition={{ duration: 0.9, ease: smoothEase }}
     >
-      {children}
-    </Link>
+      <Link
+        href={href}
+        aria-label={label}
+        className="
+          flex h-6 w-6 shrink-0 items-center justify-center
+          rounded-full bg-black
+          text-[10px] font-semibold text-white
+          transition-transform duration-300
+          hover:scale-110
+          sm:h-[21px] sm:w-[21px]
+        "
+      >
+        {children}
+      </Link>
+    </motion.div>
   );
 }

@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Play } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
+import { motion } from "framer-motion";
 
 const farmTypes = [
   {
@@ -49,6 +50,13 @@ const farmTypes = [
 
   },
   {
+    id: "schools",
+    label: "Schools",
+    video: "/videos/grow/backyard.mp4",
+    title: "Backyard Farming",
+
+  },
+  {
     id: "commercial",
     label: "Commercial",
     video: "/videos/grow/backyard.mp4",
@@ -63,6 +71,7 @@ const locations = [
   "Balcony",
   "Rooftop",
   "Backyard",
+  "Schools",
   "Greenhouse",
   "Commercial",
 ];
@@ -108,12 +117,32 @@ export default function GrowWhereYouAre() {
   };
 
   return (
-    <section className="w-full bg-white py-16 sm:py-20 md:py-24 lg:py-22 xl:py-22">
+    <motion.section
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: false, amount: 0.08 }}
+      variants={{
+        hidden: {},
+        visible: { transition: { staggerChildren: 0.22 } },
+      }}
+      className="w-full bg-white py-16 sm:py-20 md:py-24 lg:py-22 xl:py-22"
+    >
       <div className="mx-auto w-full max-w-[1500px] px-5 sm:px-8 md:px-10 lg:px-12 xl:px-14">
         {/* =====================================================
             HEADER
         ====================================================== */}
-        <div className="flex flex-col items-center text-center">
+        <motion.div
+          variants={{
+            hidden: { opacity: 0, y: 28, filter: "blur(5px)" },
+            visible: {
+              opacity: 1,
+              y: 0,
+              filter: "blur(0px)",
+              transition: { duration: 1.6, ease: [0.16, 1, 0.3, 1] },
+            },
+          }}
+          className="flex flex-col items-center text-center"
+        >
           <h2
             className="
                 text-[34px]
@@ -171,15 +200,18 @@ export default function GrowWhereYouAre() {
                 xl:text-[17px]
             "
           >
-            From balconies and rooftops to commercial farms, we transform
-            available spaces into productive growing environments.
+         From compact home gardens to institutional and commercial growing environments, Mazra Care explores adaptable farming models that make productive use of available spaces.
           </p>
-        </div>
+        </motion.div>
 
         {/* =====================================================
             MAIN VISUAL AREA
         ====================================================== */}
-        <div
+        <motion.div
+          initial={{ opacity: 0, y: 22, scale: 0.995, filter: "blur(2px)" }}
+          whileInView={{ opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }}
+          viewport={{ once: false, amount: 0.18 }}
+          transition={{ duration: 1.8, ease: [0.16, 1, 0.3, 1] }}
           className="
             relative
             mx-auto
@@ -195,7 +227,11 @@ export default function GrowWhereYouAre() {
           {/* =================================================
               LEFT TOP - INDOOR
           ================================================== */}
-          <button
+          <motion.button
+            initial={{ opacity: 0, scale: 0.94, y: 8 }}
+            whileInView={{ opacity: 1, scale: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.35 }}
+            transition={{ duration: 1.5, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
             type="button"
             onClick={() => setActiveId("indoor")}
             aria-label="Indoor farming"
@@ -237,12 +273,16 @@ export default function GrowWhereYouAre() {
             {activeId === "indoor" && (
               <span className="absolute inset-0 rounded-full bg-black/10" />
             )}
-          </button>
+          </motion.button>
 
           {/* =================================================
               LEFT BOTTOM - TERRACE
           ================================================== */}
-          <button
+          <motion.button
+            initial={{ opacity: 0, scale: 0.94, y: 8 }}
+            whileInView={{ opacity: 1, scale: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.35 }}
+            transition={{ duration: 1.5, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
             type="button"
             onClick={() => setActiveId("terrace")}
             aria-label="Terrace farming"
@@ -281,12 +321,16 @@ export default function GrowWhereYouAre() {
             {activeId === "terrace" && (
               <span className="absolute inset-0 rounded-full bg-black/10" />
             )}
-          </button>
+          </motion.button>
 
           {/* =================================================
               RIGHT TOP - GREENHOUSE
           ================================================== */}
-          <button
+          <motion.button
+            initial={{ opacity: 0, scale: 0.94, y: 8 }}
+            whileInView={{ opacity: 1, scale: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.35 }}
+            transition={{ duration: 1.5, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
             type="button"
             onClick={() => setActiveId("greenhouse")}
             aria-label="Greenhouse farming"
@@ -325,12 +369,16 @@ export default function GrowWhereYouAre() {
             {activeId === "greenhouse" && (
               <span className="absolute inset-0 rounded-full bg-black/10" />
             )}
-          </button>
+          </motion.button>
 
           {/* =================================================
               RIGHT BOTTOM - BACKYARD
           ================================================== */}
-          <button
+          <motion.button
+            initial={{ opacity: 0, scale: 0.94, y: 8 }}
+            whileInView={{ opacity: 1, scale: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.35 }}
+            transition={{ duration: 1.5, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
             type="button"
             onClick={() => setActiveId("backyard")}
             aria-label="Backyard farming"
@@ -371,7 +419,7 @@ export default function GrowWhereYouAre() {
             {activeId === "backyard" && (
               <span className="absolute inset-0 rounded-full bg-black/10" />
             )}
-          </button>
+          </motion.button>
 
           {/* =================================================
               CENTER VIDEO
@@ -455,12 +503,19 @@ export default function GrowWhereYouAre() {
    
             </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* =====================================================
             LOCATION LIST
         ====================================================== */}
-          <div
+          <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false, amount: 0.25 }}
+          variants={{
+            hidden: {},
+            visible: { transition: { staggerChildren: 0.16, delayChildren: 0.15 } },
+          }}
           className="
             mx-auto
             mt-8
@@ -481,9 +536,17 @@ export default function GrowWhereYouAre() {
               location.toLowerCase() === activeFarm.label.toLowerCase();
 
             return (
-              <div
+              <motion.div
                 key={location}
-                className="flex items-center gap-5 sm:gap-6 md:gap-7"
+                variants={{
+                  hidden: { opacity: 0, y: 14 },
+                  visible: {
+                    opacity: 1,
+                    y: 0,
+                    transition: { duration: 1.15, ease: [0.16, 1, 0.3, 1] },
+                  },
+                }}
+                className="flex items-center gap-5 sm:gap-6 md:gap-4"
               >
                 <button
                   type="button"
@@ -525,15 +588,21 @@ export default function GrowWhereYouAre() {
                     "
                   />
                 )}
-              </div>
+              </motion.div>
             );
           })}
-        </div>
+        </motion.div>
 
         {/* =====================================================
             CTA
         ====================================================== */}
-        <div className="mt-8 flex justify-center sm:mt-9">
+        <motion.div
+          initial={{ opacity: 0, y: 14, scale: 0.995 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          viewport={{ once: false, amount: 0.5 }}
+          transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
+          className="mt-8 flex justify-center sm:mt-9"
+        >
           <Link
             href="/solutions"
             className="
@@ -591,8 +660,8 @@ export default function GrowWhereYouAre() {
               <ArrowRight size={13} strokeWidth={2} />
             </span>
           </Link>
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 }

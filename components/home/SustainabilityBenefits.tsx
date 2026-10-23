@@ -1,7 +1,7 @@
-
 "use client";
 
 import Image from "next/image";
+import { motion, useReducedMotion } from "framer-motion";
 import {
   ArrowUpRight,
   Droplets,
@@ -13,61 +13,94 @@ import {
 const benefits = [
   {
     id: "water",
-    title: "Less Water",
+    title: "Smarter Water Use",
     description:
-      "Efficient farming systems that use up to 90% less water.",
+      "Recirculating cultivation systems designed to reduce unnecessary water consumption.",
     image: "/home/LessWater.png",
     icon: Droplets,
   },
   {
     id: "waste",
-    title: "Less Waste",
+    title: "Reduced Resource Waste",
     description:
-      "Minimize resource waste through closed-loop systems.",
+      "More precise nutrient delivery and responsible use of growing resources.",
     image: "/home/LessWaste.png",
     icon: RefreshCw,
     active: true,
   },
   {
-    id: "resources",
-    title: "Smarter Resources",
+    id: "intelligent",
+    title: "Intelligent Farm Management",
     description:
-      "Optimal use of energy, space and natural resources.",
+      "AI and IoT-supported concepts for monitoring growing conditions and farm performance.",
     image: "/home/SmarterResources.png",
     icon: Settings,
   },
   {
     id: "growth",
-    title: "Better Growth",
+    title: "Productive Growing Spaces",
     description:
-      "Healthier plants and higher yields with consistent results.",
-    image: "/home/BetterGrowth.png",
+      "Controlled environments designed to improve cultivation consistency and space efficiency.",
+    image: "/home/BetterGrowths.png",
     icon: Sparkles,
   },
 ];
 
+const smoothEase = [0.16, 1, 0.3, 1] as const;
+
 export default function SustainabilityBenefits() {
+  const shouldReduceMotion = useReducedMotion();
+
+  const headerVariants = {
+    hidden: { opacity: 0, y: shouldReduceMotion ? 0 : 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: shouldReduceMotion ? 0 : 1.8, ease: smoothEase },
+    },
+  };
+
+  const cardVariants = {
+    hidden: {
+      opacity: 0,
+      y: shouldReduceMotion ? 0 : 22,
+      scale: shouldReduceMotion ? 1 : 0.99,
+    },
+    visible: (index: number) => ({
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: {
+        duration: shouldReduceMotion ? 0 : 1.7,
+        delay: shouldReduceMotion ? 0 : index * 0.28,
+        ease: smoothEase,
+      },
+    }),
+  };
+
   return (
     <section className="w-full bg-white py-12 sm:py-16 md:py-20 lg:py-24">
       <div className="mx-auto w-full max-w-[1700px] px-4 sm:px-6 md:px-8 lg:px-12 xl:px-14">
         {/* HEADER */}
-        <div className="flex flex-col items-center text-center">
+        <motion.div
+          className="flex flex-col items-center text-center"
+          variants={headerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false, amount: 0.15, margin: "0px 0px -40px 0px" }}
+        >
           <h2
             className="
               flex flex-wrap items-center justify-center
               gap-x-2 gap-y-1
-                 text-[34px]
+              text-[34px]
               font-semibold
               leading-[1.03]
               tracking-[-0.045em]
               text-[#111827]
-
               sm:text-[40px]
-
               md:text-[44px]
-
               lg:text-[46px]
-
               xl:text-[48px]
               sm:gap-x-3
             "
@@ -97,28 +130,23 @@ export default function SustainabilityBenefits() {
           <p
             className="
               mt-3 max-w-[850px]
-                text-[15px]
-                font-normal
-                leading-[1.55]
-                tracking-[-0.01em]
-                text-[#4B5563]
-
-                sm:mt-5
-                sm:text-[16px]
-
-                md:text-[17px]
-
-                lg:text-[17px]
-
-                xl:text-[17px]
+              text-[15px]
+              font-normal
+              leading-[1.55]
+              tracking-[-0.01em]
+              text-[#4B5563]
+              sm:mt-5
+              sm:text-[16px]
+              md:text-[17px]
+              lg:text-[17px]
+              xl:text-[17px]
             "
           >
-            We design farming systems that use resources more efficiently
-            while supporting sustainable food
-            <br className="hidden sm:block" />
-            production.
+            Our approach focuses on using land, water, energy and technology
+            more intelligently—supporting efficient food production and a more
+            sustainable future.
           </p>
-        </div>
+        </motion.div>
 
         {/* BENEFIT CARDS */}
         <div
@@ -129,12 +157,21 @@ export default function SustainabilityBenefits() {
             xl:gap-7
           "
         >
-          {benefits.map((benefit) => {
+          {benefits.map((benefit, index) => {
             const Icon = benefit.icon;
 
             return (
-              <article
+              <motion.article
                 key={benefit.id}
+                custom={index}
+                variants={cardVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{
+                  once: false,
+                  amount: 0.08,
+                  margin: "0px 0px -20px 0px",
+                }}
                 className="
                   group relative flex min-h-[360px]
                   flex-col overflow-hidden rounded-[24px]
@@ -144,7 +181,7 @@ export default function SustainabilityBenefits() {
                   sm:min-h-[380px] sm:rounded-[26px] sm:p-6
                   md:min-h-[400px] md:p-7
                   lg:min-h-[390px]
-                  xl:min-h-[410px] xl:p-8
+                  xl:min-h-[410px] xl:p-6
                 "
               >
                 {/* HOVER BACKGROUND */}
@@ -163,7 +200,7 @@ export default function SustainabilityBenefits() {
                 {/* CONTENT */}
                 <div className="relative z-10 flex h-full flex-1 flex-col">
                   {/* ICON */}
-                  <div
+                  <motion.div
                     className="
                       flex h-8 w-8 items-center justify-center
                       text-[#006B55]
@@ -172,12 +209,14 @@ export default function SustainabilityBenefits() {
                       group-hover:scale-105
                       group-hover:text-[#38D7A0]
                     "
+                    whileHover={shouldReduceMotion ? undefined : { scale: 1.08, rotate: -4 }}
+                    transition={{ duration: 1.1, ease: smoothEase }}
                   >
                     <Icon size={28} strokeWidth={1.8} />
-                  </div>
+                  </motion.div>
 
                   {/* TEXT */}
-                  <div className="mt-6 sm:mt-7 md:mt-8">
+                  <div className="mt-6 sm:mt-7 md:mt-3">
                     <h3
                       className="
                         text-[19px] font-semibold
@@ -268,7 +307,7 @@ export default function SustainabilityBenefits() {
                     </button>
                   </div>
                 </div>
-              </article>
+              </motion.article>
             );
           })}
         </div>

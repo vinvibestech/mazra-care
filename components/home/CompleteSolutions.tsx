@@ -3,28 +3,36 @@
 import Image from "next/image";
 import { ArrowUpRight, ChevronRight } from "lucide-react";
 import { useState } from "react";
+import { motion } from "motion/react";
 
 const solutions = [
     {
         id: "hydroponics",
         label: "hydroponics",
         title: "Hydroponics",
-        description: "Efficient soilless farming.",
-        image: "/home/Hydroponics.png",
+        description: "Grow plants without soil using precisely managed water and nutrient systems.",
+        image: "/home/Hydroponics.jpg",
     },
     {
         id: "aquaponics",
         label: "aquaponics",
         title: "Aquaponics",
-        description: "Sustainable farming through nature.",
-        image: "/home/Aquaponics.png",
+        description: "Integrate fish cultivation and plant production through a connected, water-recirculating ecosystem.",
+        image: "/home/Aquaponic.png",
     },
     {
-        id: "greenhouse",
-        label: "greenhouse",
-        title: "Greenhouse",
-        description: "Controlled environments for better growth.",
-        image: "/home/Greenhouse.png",
+        id: "aeroponics",
+        label: "aeroponics",
+        title: "Aeroponics",
+        description: "Explore advanced cultivation systems that nourish plant roots through controlled nutrient mist.",
+        image: "/home/Aeroponics.png",
+    },
+    {
+        id: "smartfarming",
+        label: "Smart Farming",
+        title: "Smart Farming",
+        description: "Connect sensors, automation and digital monitoring for more informed farm management.",
+        image: "/home/SmartFarming.png",
     },
 ];
 
@@ -99,7 +107,7 @@ export default function CompleteSolutions() {
               LEFT CONTENT
           ========================================== */}
 
-                    <div
+                    <motion.div
                         className="
               flex
               flex-col
@@ -108,7 +116,11 @@ export default function CompleteSolutions() {
               lg:pr-4
               xl:pr-6
             "
-                    >
+                    
+                        initial={{ opacity: 0, x: -45 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: false, amount: 0.25 }}
+                        transition={{ duration: 0.75, ease: "easeOut" }}>
                         {/* Eyebrow */}
                         <p
                             className="
@@ -132,7 +144,7 @@ export default function CompleteSolutions() {
                  max-w-[650px]
                 text-[36px]
                 font-semibold
-                leading-[1.03]
+                leading-[1.07]
                 tracking-[-0.045em]
                 text-[#111827]
 
@@ -170,16 +182,16 @@ export default function CompleteSolutions() {
                 xl:text-[16px]
               "
                         >
-                            Smart farming solutions designed around your
-                            space, needs, and goals.
+                           Innovative, adaptable farming systems designed around your space, resources and growing ambitions.
+
                         </p>
-                    </div>
+                    </motion.div>
 
                     {/* =========================================
               MIDDLE IMAGE COLUMN
           ========================================== */}
 
-                    <div
+                    <motion.div
                         className="
               flex
               flex-col
@@ -189,7 +201,11 @@ export default function CompleteSolutions() {
 
               md:gap-3
             "
-                    >
+                    
+                        initial={{ opacity: 0, y: 45 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: false, amount: 0.2 }}
+                        transition={{ duration: 0.8, delay: 0.12, ease: "easeOut" }}>
                         {/* TOP IMAGE */}
                         <div
                             className="
@@ -338,13 +354,13 @@ export default function CompleteSolutions() {
                                 />
                             </button>
                         </div>
-                    </div>
+                    </motion.div>
 
                     {/* =========================================
               RIGHT FEATURED CARD
           ========================================== */}
 
-                    <div
+                    <motion.div
                         className="
               relative
               min-h-[420px]
@@ -367,7 +383,11 @@ export default function CompleteSolutions() {
 
               2xl:min-h-[660px]
             "
-                    >
+                    
+                        initial={{ opacity: 0, x: 45, scale: 0.97 }}
+                        whileInView={{ opacity: 1, x: 0, scale: 1 }}
+                        viewport={{ once: false, amount: 0.2 }}
+                        transition={{ duration: 0.8, delay: 0.22, ease: "easeOut" }}>
                         {/* Active Image */}
                         <Image
                             key={activeSolution.id}
@@ -543,9 +563,9 @@ export default function CompleteSolutions() {
 
                   md:text-[40px]
 
-                  lg:text-[38px]
+                  lg:text-[34px]
 
-                  xl:text-[42px]
+                  xl:text-[34px]
                 "
                             >
                                 {activeSolution.title}
@@ -568,7 +588,7 @@ export default function CompleteSolutions() {
                                 {activeSolution.description}
                             </p>
                         </div>
-                    </div>
+                    </motion.div>
                 </div>
             </div>
         </section>
