@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ArrowUpRight, Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
+import Image from "next/image";
 
 const navItems = [
   { name: "Home", href: "/" },
@@ -63,17 +64,27 @@ export default function Navbar() {
           h-[88px]
         "
       >
-        {/* LOGO */}
-        <Link
-          href="/"
-          className={`
-            text-[14px] font-bold tracking-[0.12em]
-            transition-colors duration-500
-            ${isWhiteNavbar ? "text-black" : "text-white"}
-          `}
-        >
-          MAZRA CARE
-        </Link>
+
+{/* LOGO */}
+<Link href="/" className="relative flex shrink-0 items-center">
+  <Image
+    src="/home/logo.png"
+    alt="Mazra Care"
+    width={160}
+    height={45}
+    priority
+    className={`
+      h-auto
+      w-[70px]
+      object-contain
+      transition-opacity
+      duration-300
+      sm:w-[80px]
+      lg:w-[80px]
+    `}
+  />
+</Link>
+
 
         {/* DESKTOP NAVIGATION */}
     {/* DESKTOP NAVIGATION */}
