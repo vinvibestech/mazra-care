@@ -17,49 +17,49 @@ const farmTypes = [
   {
     id: "terrace",
     label: "Terrace",
-    video: "/videos/grow/terrace.mp4",
+    video: "/home/Terrace.mp4",
     title: "Terrace Farming",
 
   },
    {
     id: "balcony",
     label: "Balcony",
-    video: "/videos/grow/terrace.mp4",
+    video: "/home/BalconyVideo.mp4",
     title: "Balcony Farming",
 
   },
    {
     id: "rooftop",
     label: "Rooftop",
-    video: "/videos/grow/terrace.mp4",
+    video: "/home/Rooftop.mp4",
     title: "Rooftop Farming",
 
   },
   {
     id: "greenhouse",
     label: "Greenhouse",
-    video: "/videos/grow/greenhouse.mp4",
+    video: "/home/Greenhouse.mp4",
     title: "Greenhouse Farming",
 
   },
   {
     id: "backyard",
     label: "Backyard",
-    video: "/videos/grow/backyard.mp4",
+    video: "/home/Backyard.mp4",
     title: "Backyard Farming",
 
   },
   {
     id: "schools",
     label: "Schools",
-    video: "/videos/grow/backyard.mp4",
+    video: "/home/Schools.mp4",
     title: "Backyard Farming",
 
   },
   {
     id: "commercial",
     label: "Commercial",
-    video: "/videos/grow/backyard.mp4",
+    video: "/home/Commercial.mp4",
     title: "Commercial Farming",
 
   },
@@ -262,7 +262,7 @@ export default function GrowWhereYouAre() {
             `}
           >
             <Image
-              src="/home/Indoor.png"
+              src="/home/Indoors.png"
               alt="Indoor farming"
               fill
               className="object-cover transition-transform duration-500 group-hover:scale-110"
@@ -311,7 +311,7 @@ export default function GrowWhereYouAre() {
             `}
           >
             <Image
-              src="/home/Terrace.png"
+              src="/home/Terraceimage.png"
               alt="Terrace farming"
               fill
               className="object-cover transition-transform duration-500 group-hover:scale-110"
@@ -332,8 +332,8 @@ export default function GrowWhereYouAre() {
             viewport={{ once: false, amount: 0.35 }}
             transition={{ duration: 1.5, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
             type="button"
-            onClick={() => setActiveId("greenhouse")}
-            aria-label="Greenhouse farming"
+            onClick={() => setActiveId("rooftop")}
+            aria-label="rooftop farming"
             className={`
               group
               absolute
@@ -352,21 +352,21 @@ export default function GrowWhereYouAre() {
               xl:h-[105px]
               xl:w-[105px]
               ${
-                activeId === "greenhouse"
+                activeId === "rooftop"
                   ? "border-white ring-[#E6F5DC] ring-4 scale-105"
                   : "border-white ring-[#E5E7EB] hover:scale-105"
               }
             `}
           >
             <Image
-              src="/home/green.png"
+              src="/home/rooftopimage.png"
               alt="Greenhouse farming"
               fill
               className="object-cover transition-transform duration-500 group-hover:scale-110"
               sizes="105px"
             />
 
-            {activeId === "greenhouse" && (
+            {activeId === "rooftop" && (
               <span className="absolute inset-0 rounded-full bg-black/10" />
             )}
           </motion.button>
@@ -380,7 +380,7 @@ export default function GrowWhereYouAre() {
             viewport={{ once: false, amount: 0.35 }}
             transition={{ duration: 1.5, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
             type="button"
-            onClick={() => setActiveId("backyard")}
+            onClick={() => setActiveId("balcony")}
             aria-label="Backyard farming"
             className={`
               group
@@ -402,14 +402,14 @@ export default function GrowWhereYouAre() {
               xl:h-[115px]
               xl:w-[115px]
               ${
-                activeId === "backyard"
+                activeId === "balcony"
                   ? "border-white ring-[#E6F5DC] ring-4 scale-105"
                   : "border-white ring-[#E5E7EB] hover:scale-105"
               }
             `}
           >
             <Image
-              src="/home/Backyard.png"
+              src="/home/balconyimage.png"
               alt="Backyard farming"
               fill
               className="object-cover transition-transform duration-500 group-hover:scale-110"

@@ -415,7 +415,7 @@ export default function TechnologyVision() {
             "
           >
             <Image
-              src="/tech/OurTechnologyVision.png"
+              src="/tech/TechnologyVision.png"
               alt="Future of smart agriculture"
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"

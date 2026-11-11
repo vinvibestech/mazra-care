@@ -27,7 +27,7 @@ export default function Aquaponics() {
               "
                     >
                         <Image
-                            src="/solutions/Aquaponics.png"
+                            src="/solutions/Aquaponic.png"
                             alt="Modern greenhouse and sustainable farming fields"
                             fill
                             priority

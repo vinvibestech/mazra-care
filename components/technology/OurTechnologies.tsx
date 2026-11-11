@@ -256,7 +256,7 @@ text-[36px] font-semibold
             "
           >
             <Image
-              src="/tech/OurTechnologies.png"
+              src="/tech/OurTechnologie.png"
               alt="Smart agricultural monitoring technology"
               fill
               sizes="(max-width: 768px) 100vw, 50vw"

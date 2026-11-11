@@ -26,7 +26,7 @@ export default function PrecisionTechnology() {
           "
         >
           <Image
-            src="/tech/Precision.png"
+            src="/tech/Precisions.png"
             alt="Precision technology for crop growth"
             fill
             priority

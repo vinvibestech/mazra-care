@@ -15,7 +15,7 @@ const tabs = [
     id: "technology",
     label: "technology",
     icon: Cpu,
-    video: "/home/technology.mp4",
+    video: "/home/technologyVideo.mp4",
     title: "Smart Technology",
     description:
       "Mazra Care combines modern agriculture, education and renewable energy to create innovative, future-ready farming solutions.",
@@ -25,7 +25,7 @@ const tabs = [
     id: "innovation",
     label: "innovation",
     icon: Cpu,
-    video: "/videos/innovation.mp4",
+    video: "/home/innovationVideo.mp4",
     title: "Sustainable Innovation",
     description:
       "Mazra Care combines modern agriculture, education and renewable energy to create innovative, future-ready farming solutions.",
@@ -35,7 +35,7 @@ const tabs = [
     id: "sustainable",
     label: "sustainable",
     icon: Sprout,
-    video: "/videos/sustainable.mp4",
+    video: "/home/sustainableVideo.mp4",
     title: "Responsible Sustainability",
     description:
       "Hydroponics, aquaponics and aeroponics promote water conservation, resource efficiency and environmentally responsible food production.",
@@ -45,7 +45,7 @@ const tabs = [
     id: "healthy",
     label: "healthy",
     icon: Leaf,
-    video: "/videos/healthy.mp4",
+    video: "/home/healthyVideo.mp4",
     title: "Community Empowerment",
     description:
       "Mazra Care connects families, students and farmers through sustainable agriculture, practical education and opportunities for economic growth.",

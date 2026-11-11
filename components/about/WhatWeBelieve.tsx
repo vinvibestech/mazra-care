@@ -26,7 +26,7 @@ export default function WhatWeBelieve() {
           "
                 >
                     <Image
-                        src="/about/WhatWeBelieves.png"
+                        src="/about/WeBelieve.png"
                         alt="Modern greenhouse and sustainable farming fields"
                         fill
                         priority

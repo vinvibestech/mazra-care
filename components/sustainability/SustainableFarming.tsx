@@ -285,7 +285,7 @@ export default function SustainableFarming() {
           "
         >
           <Image
-            src="/sustainability/SustainableFarming.png"
+            src="/sustainability/SustainableFarmings.png"
             alt="Sustainable hydroponic farming system"
             fill
             priority

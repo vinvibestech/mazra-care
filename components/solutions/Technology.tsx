@@ -202,7 +202,7 @@ export default function Technology() {
           "
         >
           <Image
-            src="/solutions/Technology.png"
+            src="/solutions/Technologys.png"
             alt="Farmer using smart technology to monitor crops inside a greenhouse"
             fill
             priority

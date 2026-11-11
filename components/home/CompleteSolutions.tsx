@@ -116,7 +116,7 @@ export default function CompleteSolutions() {
               lg:pr-4
               xl:pr-6
             "
-                    
+
                         initial={{ opacity: 0, x: -45 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: false, amount: 0.25 }}
@@ -182,7 +182,7 @@ export default function CompleteSolutions() {
                 xl:text-[16px]
               "
                         >
-                           Innovative, adaptable farming systems designed around your space, resources and growing ambitions.
+                            Innovative, adaptable farming systems designed around your space, resources and growing ambitions.
 
                         </p>
                     </motion.div>
@@ -201,7 +201,7 @@ export default function CompleteSolutions() {
 
               md:gap-3
             "
-                    
+
                         initial={{ opacity: 0, y: 45 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: false, amount: 0.2 }}
@@ -383,7 +383,7 @@ export default function CompleteSolutions() {
 
               2xl:min-h-[660px]
             "
-                    
+
                         initial={{ opacity: 0, x: 45, scale: 0.97 }}
                         whileInView={{ opacity: 1, x: 0, scale: 1 }}
                         viewport={{ once: false, amount: 0.2 }}
@@ -473,7 +473,7 @@ export default function CompleteSolutions() {
 
                       sm:px-4
                       sm:text-[12px]
-
+                      
                       md:px-5
                       md:text-[13px]
 
@@ -497,30 +497,29 @@ export default function CompleteSolutions() {
                             type="button"
                             aria-label="Next solution"
                             onClick={handleNext}
-                            className="
-                absolute
-                right-5
-                top-4
-                flex
-                h-9
-                w-9
-                items-center
-                justify-center
-                rounded-full
-                border
-                border-white/20
-                bg-black/35
-                text-white
-                backdrop-blur-md
-                transition-all
-                duration-300
-                hover:bg-black/60
-                md:right-4
-                md:top-6
-             
-                sm:h-10
-                sm:w-10
-              "
+                           className="
+    absolute
+    right-4
+    top-4
+    z-20
+    flex
+    h-10
+    w-10
+    items-center
+    justify-center
+    rounded-full
+    border
+    border-white/15
+    bg-[#171717]/80
+    text-white
+    backdrop-blur-md
+    transition-all
+    duration-300
+    hover:bg-[#A7F3D0]
+    hover:text-[#17211B]
+    sm:right-5
+    sm:top-5
+"
                         >
                             <ChevronRight
                                 size={17}

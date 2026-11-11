@@ -105,7 +105,7 @@ export default function OurApproach() {
           "
                 >
                     <Image
-                        src="/about/OurApproach.png"
+                        src="/about/OurApproachs.png"
                         alt="Modern greenhouse and sustainable farming fields"
                         fill
                         priority

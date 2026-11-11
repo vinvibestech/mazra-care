@@ -26,7 +26,7 @@ export default function OurSolutions() {
           "
                 >
                     <Image
-                        src="/solutions/OurSolutions.png"
+                        src="/solutions/OurSolution.png"
                         alt="Modern greenhouse and sustainable farming fields"
                         fill
                         priority

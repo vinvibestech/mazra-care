@@ -103,7 +103,7 @@ export default function WhoWeAre() {
           "
                 >
                     <Image
-                        src="/about/WhoWeAre.png"
+                        src="/about/WhoWeAres.png"
                         alt="Modern greenhouse and sustainable farming fields"
                         fill
                         priority

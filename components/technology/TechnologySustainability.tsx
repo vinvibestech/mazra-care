@@ -26,7 +26,7 @@ export default function TechnologySustainability() {
           "
         >
           <Image
-            src="/tech/TechnologySustainability.png"
+            src="/tech/TechnologySustainabilitys.png"
             alt="Technology and sustainable farming"
             fill
             priority

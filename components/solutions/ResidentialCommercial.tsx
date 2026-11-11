@@ -9,7 +9,7 @@ const sections = [
     id: "residential",
     label: "Residential Farming",
     title: "Grow at Home.",
-    image: "/solutions/ResidentialFarming.png",
+    image: "/solutions/Residential.png",
     imageAlt: "Residential farming and modern growing space",
     visibleContent: (
       <>
@@ -58,7 +58,7 @@ const sections = [
     id: "commercial",
     label: "Commercial Farming",
     title: "Built to Grow With Your Business.",
-    image: "/solutions/CommercialFarmings.png",
+    image: "/solutions/CommercialFarming.png",
     imageAlt: "Commercial greenhouse farming facility",
     visibleContent: (
       <>

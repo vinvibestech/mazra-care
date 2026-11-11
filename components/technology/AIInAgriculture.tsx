@@ -100,7 +100,7 @@ export default function AIInAgriculture() {
           "
         >
           <Image
-            src="/tech/AIInAgricultures.png"
+            src="/tech/AIAgriculture.png"
             alt="Modern greenhouse and sustainable farming fields"
             fill
             priority

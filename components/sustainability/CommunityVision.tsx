@@ -46,7 +46,7 @@ export default function CommunityVision() {
             "
           >
             <Image
-              src="/sustainability/CommunitySocial.png"
+              src="/sustainability/CommunitySocials.png"
               alt="Community and social sustainability"
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"
@@ -399,7 +399,7 @@ export default function CommunityVision() {
             "
           >
             <Image
-              src="/sustainability/OurVision.png"
+              src="/sustainability/OurVisions.png"
               alt="Mazra Care sustainable agriculture vision"
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"

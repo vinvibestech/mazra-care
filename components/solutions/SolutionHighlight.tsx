@@ -104,7 +104,7 @@ export default function SolutionHighlight() {
           "
         >
           <Image
-            src="/solutions/Solution.png"
+            src="/solutions/Solutions.png"
             alt="Modern greenhouse and sustainable farming fields"
             fill
             priority
