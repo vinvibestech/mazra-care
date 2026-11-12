@@ -12,6 +12,23 @@ import TechnologyAcrossFarms from "@/components/technology/TechnologyAcrossFarms
 import TechnologyHighlight from "@/components/technology/TechnologyHighlight";
 import TechnologySustainability from "@/components/technology/TechnologySustainability";
 import TechnologyVision from "@/components/technology/TechnologyVision";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Smart Farming Technology in UAE – Mazra Care",
+  description:
+    "Explore advanced farming technology at Mazra Care, including IoT monitoring, automated irrigation, precision farming and intelligent greenhouse management.",
+  keywords: [
+    "agriculture technology UAE",
+    "smart farming technology",
+    "IoT agriculture",
+    "precision farming UAE",
+    "automated irrigation",
+    "greenhouse automation",
+    "agricultural sensors",
+  ],
+};
+
 
 
 export default function page() {

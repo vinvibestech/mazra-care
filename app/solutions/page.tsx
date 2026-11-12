@@ -10,6 +10,23 @@ import SmartGreenhouses from "@/components/solutions/SmartGreenhouses";
 import SolutionHighlight from "@/components/solutions/SolutionHighlight";
 import Technology from "@/components/solutions/Technology";
 import WhyChooseUs from "@/components/solutions/WhyChooseUs";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Smart Farming Solutions in UAE – Mazra Care",
+  description:
+    "Explore Mazra Care's smart farming solutions, including hydroponics, aquaponics, aeroponics, vertical farming and customized greenhouse systems in the UAE.",
+  keywords: [
+    "smart farming solutions UAE",
+    "hydroponic systems UAE",
+    "aquaponics systems",
+    "aeroponics farming",
+    "vertical farming UAE",
+    "greenhouse solutions",
+    "turnkey farming solutions",
+  ],
+};
+
 
 
 export default function page() {
