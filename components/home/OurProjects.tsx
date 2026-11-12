@@ -5,9 +5,9 @@ import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
 
 const commitments = [
-  "COMMITMENT TO SUSTAINABILITY",
-  "COMMITMENT TO SUSTAINABILITY",
-  "COMMITMENT TO SUSTAINABILITY",
+  "Commitment To Sustainability",
+  "Commitment To Sustainability",
+  "Commitment To Sustainability",
 ];
 
 const smoothEase = [0.16, 1, 0.3, 1] as const;

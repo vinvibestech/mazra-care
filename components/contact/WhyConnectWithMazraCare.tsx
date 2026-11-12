@@ -26,7 +26,7 @@ export default function WhyConnectWithMazraCare() {
           "
         >
           <Image
-            src="/contact/WhyConnect.png"
+            src="/contact/WhyConnects.png"
             alt="Modern agriculture and sustainable farming solutions"
             fill
             priority

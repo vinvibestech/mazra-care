@@ -229,7 +229,7 @@ export default function ContactHero() {
           "
         >
           <Image
-            src="/contact/contactHero.png"
+            src="/contact/contactHeros.png"
             alt="Sustainable farming and responsible agriculture"
             fill
             priority
