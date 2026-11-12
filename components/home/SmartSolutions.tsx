@@ -66,7 +66,7 @@ export default function SmartSolutions() {
 
   const duration = shouldReduceMotion ? 0 : 0.8;
 
-  /* RESTART VIDEO WHEN TAB CHANGES */
+  // Restart video when active tab changes
   useEffect(() => {
     const video = videoRef.current;
 
@@ -80,37 +80,22 @@ export default function SmartSolutions() {
   }, [activeTab]);
 
   return (
-    <section className="w-full bg-white py-16 sm:py-20 md:py-24 lg:py-28 xl:py-32">
-      <div
-        className="
-          mx-auto
-          w-full
-          max-w-[1600px]
-          px-5
-          sm:px-7
-          md:px-10
-          lg:px-12
-          xl:px-14
-          2xl:px-16
-        "
-      >
+    <section className="w-full overflow-hidden bg-white py-12 sm:py-16 md:py-20 lg:py-24 xl:py-28">
+      <div className="mx-auto w-full max-w-[1600px] px-5 sm:px-7 md:px-10 lg:px-12 xl:px-14 2xl:px-16">
+
         {/* MOBILE / TABLET TAB NAVIGATION */}
         <motion.div
-          initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{
+            opacity: 0,
+            y: shouldReduceMotion ? 0 : 20,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
           viewport={{ once: false, amount: 0.15 }}
           transition={{ duration, ease: smoothEase }}
-          className="
-            mb-8
-            flex
-            w-full
-            gap-2
-            overflow-x-auto
-            pb-2
-            scrollbar-hide
-            sm:mb-10
-            lg:hidden
-          "
+          className="mb-7 flex w-full gap-2 overflow-x-auto pb-3 scrollbar-hide sm:mb-9 lg:hidden"
         >
           {tabs.map((tab) => {
             const Icon = tab.icon;
@@ -120,6 +105,7 @@ export default function SmartSolutions() {
               <motion.button
                 key={tab.id}
                 type="button"
+                aria-pressed={isActive}
                 onClick={() => setActiveTab(tab.id)}
                 whileHover={
                   shouldReduceMotion ? undefined : { y: -2 }
@@ -129,22 +115,10 @@ export default function SmartSolutions() {
                 }
                 transition={{ duration: 0.25, ease: smoothEase }}
                 className={`
-                  group
-                  flex
-                  shrink-0
-                  items-center
-                  gap-2
-                  rounded-full
-                  border
-                  px-4
-                  py-2.5
-                  text-[12px]
-                  font-medium
-                  transition-all
-                  duration-300
-                  sm:px-5
-                  sm:py-3
-                  sm:text-[13px]
+                  group flex shrink-0 items-center gap-2
+                  rounded-full border px-4 py-2.5
+                  text-xs font-medium transition-all duration-300
+                  sm:px-5 sm:py-3 sm:text-[13px]
                   ${
                     isActive
                       ? "border-black bg-black text-white"
@@ -164,7 +138,7 @@ export default function SmartSolutions() {
                   }
                 />
 
-                <span className="capitalize whitespace-nowrap">
+                <span className="whitespace-nowrap capitalize">
                   {tab.label}
                 </span>
               </motion.button>
@@ -175,19 +149,17 @@ export default function SmartSolutions() {
         {/* MAIN RESPONSIVE GRID */}
         <div
           className="
-            grid
-            grid-cols-1
-            items-center
-            gap-10
-            md:gap-12
-            lg:grid-cols-[190px_minmax(0,1.25fr)_minmax(300px,1fr)]
-            lg:gap-10
-            xl:grid-cols-[220px_minmax(0,640px)_minmax(0,1fr)]
-            xl:gap-12
+            grid grid-cols-1 items-center
+            gap-8 sm:gap-10 md:gap-12
+            lg:grid-cols-[170px_minmax(0,1.05fr)_minmax(0,0.95fr)]
+            lg:gap-8
+            xl:grid-cols-[200px_minmax(0,1.05fr)_minmax(280px,0.95fr)]
+            xl:gap-10
             2xl:grid-cols-[220px_minmax(0,680px)_minmax(0,1fr)]
             2xl:gap-14
           "
         >
+
           {/* DESKTOP TAB NAVIGATION */}
           <div className="hidden flex-col items-start gap-3 lg:flex">
             {tabs.map((tab, index) => {
@@ -198,6 +170,7 @@ export default function SmartSolutions() {
                 <motion.button
                   key={tab.id}
                   type="button"
+                  aria-pressed={isActive}
                   onClick={() => setActiveTab(tab.id)}
                   initial={{
                     opacity: 0,
@@ -219,20 +192,11 @@ export default function SmartSolutions() {
                   whileTap={
                     shouldReduceMotion ? undefined : { scale: 0.98 }
                   }
-                  className={`group
-                    flex
-                    w-fit
-                    items-center
-                    gap-3
-                    rounded-full
-                    border
-                    px-5
-                    py-3
-                    text-[13px]
-                    font-medium
-                    transition-all
-                    duration-300
-                    xl:text-[14px]
+                  className={`
+                    group flex w-fit max-w-full items-center gap-3
+                    rounded-full border px-4 py-3
+                    text-[13px] font-medium transition-all duration-300
+                    xl:px-5 xl:text-sm
                     ${
                       isActive
                         ? "border-black bg-black text-white"
@@ -252,7 +216,7 @@ export default function SmartSolutions() {
                     }
                   />
 
-                  <span className="capitalize whitespace-nowrap">
+                  <span className="whitespace-nowrap capitalize">
                     {tab.label}
                   </span>
                 </motion.button>
@@ -281,19 +245,13 @@ export default function SmartSolutions() {
               ease: smoothEase,
             }}
             className="
-              relative
-              w-full
-              overflow-hidden
-              rounded-[20px]
-              bg-[#eee]
-              aspect-[1.15/1]
-              sm:aspect-[1.35/1]
-              sm:rounded-[24px]
+              relative aspect-[1.15/1] w-full overflow-hidden
+              rounded-[18px] bg-[#eee]
+              sm:aspect-[1.35/1] sm:rounded-[22px]
               md:aspect-[1.5/1]
-              lg:aspect-[1.35/1]
-              lg:rounded-[26px]
-              xl:aspect-[1.52/1]
-              xl:rounded-[28px]
+              lg:aspect-[1.2/1] lg:rounded-[24px]
+              xl:aspect-[1.4/1] xl:rounded-[28px]
+              2xl:aspect-[1.45/1]
             "
           >
             <video
@@ -303,13 +261,8 @@ export default function SmartSolutions() {
               muted
               loop
               playsInline
-              className="
-                absolute
-                inset-0
-                h-full
-                w-full
-                object-cover
-              "
+              preload="metadata"
+              className="absolute inset-0 h-full w-full object-cover"
             >
               <source
                 src={activeContent.video}
@@ -317,25 +270,12 @@ export default function SmartSolutions() {
               />
             </video>
 
-            {/* OVERLAY */}
-            <div className="absolute inset-0 bg-black/10" />
+            {/* VIDEO OVERLAY */}
+            <div className="pointer-events-none absolute inset-0 bg-black/10" />
           </motion.div>
 
           {/* RIGHT CONTENT */}
-          <div
-            className="
-              flex
-              w-full
-              flex-col
-              justify-center
-              lg:min-h-[350px]
-              lg:max-w-[560px]
-              lg:pl-0
-              xl:min-h-[390px]
-              xl:max-w-[610px]
-              xl:pl-1
-            "
-          >
+          <div className="flex w-full min-w-0 flex-col justify-center lg:min-h-[300px] xl:min-h-[390px]">
             <motion.div
               key={activeContent.id}
               initial={{
@@ -363,16 +303,13 @@ export default function SmartSolutions() {
               {/* TITLE */}
               <h2
                 className="
-                  max-w-[650px]
-                  text-[36px]
-                  font-semibold
-                  leading-[1.03]
-                  tracking-[-0.045em]
-                  text-[#111827]
-                  sm:text-[42px]
-                  md:text-[46px]
+                  max-w-[650px] text-[32px] font-semibold
+                  leading-[1.08] tracking-[-0.045em] text-[#111827]
+                  sm:text-[38px]
+                  md:text-[44px]
                   lg:text-[36px]
-                  xl:text-[52px]
+                  xl:text-[46px]
+                  2xl:text-[52px]
                 "
               >
                 {activeContent.title}
@@ -381,17 +318,12 @@ export default function SmartSolutions() {
               {/* DESCRIPTION */}
               <p
                 className="
-                  mt-4
-                  max-w-[620px]
-                  text-[15px]
-                  font-normal
-                  leading-[1.55]
-                  tracking-[-0.01em]
+                  mt-4 max-w-[620px] text-[14px]
+                  font-normal leading-[1.65] tracking-[-0.01em]
                   text-[#4B5563]
-                  sm:mt-5
-                  sm:text-[16px]
-                  md:text-[17px]
-                  lg:text-[17px]
+                  sm:mt-5 sm:text-[15px]
+                  md:text-base
+                  lg:text-[15px]
                   xl:text-[17px]
                 "
               >
@@ -428,28 +360,12 @@ export default function SmartSolutions() {
                 <Link
                   href={activeContent.href}
                   className="
-                    group
-                    inline-flex
-                    w-fit
-                    items-center
-                    gap-3
-                    rounded-full
-                    border
-                    border-[#D2D7DF]
-                    px-5
-                    py-2.5
-                    text-[13px]
-                    font-bold
-                    text-[#273142]
-                    transition-all
-                    duration-300
-                    hover:border-black
-                    hover:bg-black
-                    hover:text-white
-                    sm:gap-4
-                    sm:px-6
-                    sm:py-3
-                    sm:text-[14px]
+                    group inline-flex w-fit items-center gap-3
+                    rounded-full border border-[#D2D7DF]
+                    px-5 py-2.5 text-[13px] font-bold
+                    text-[#273142] transition-all duration-300
+                    hover:border-black hover:bg-black hover:text-white
+                    sm:gap-4 sm:px-6 sm:py-3 sm:text-sm
                     md:text-[15px]
                   "
                 >
@@ -466,21 +382,11 @@ export default function SmartSolutions() {
                       ease: smoothEase,
                     }}
                     className="
-                      flex
-                      h-6
-                      w-6
-                      shrink-0
-                      items-center
-                      justify-center
-                      rounded-full
-                      bg-black
-                      text-white
-                      transition-all
-                      duration-300
-                      group-hover:bg-white
-                      group-hover:text-black
-                      sm:h-7
-                      sm:w-7
+                      flex h-6 w-6 shrink-0 items-center
+                      justify-center rounded-full bg-black
+                      text-white transition-all duration-300
+                      group-hover:bg-white group-hover:text-black
+                      sm:h-7 sm:w-7
                     "
                   >
                     <ArrowRight size={14} strokeWidth={2} />
